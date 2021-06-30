@@ -66,7 +66,6 @@ public class ServicesTest {
 
         TreeMap<Cell, Double> activeCellsInGarbagnate = Services.filterByStrengthReverseOrder(inputCells, garbagnateMilanese, 1.E-2);
         Assert.assertEquals(3, activeCellsInGarbagnate.size());
-        System.out.println(activeCellsInGarbagnate);
     }
 
     @Test
@@ -84,11 +83,9 @@ public class ServicesTest {
 
         TreeMap<Cell, Double> activeCellsInGarbagnateLargerThan1em5 = Services.filterByStrengthReverseOrder(inputCells, garbagnateMilanese, 1.E-5);
         Assert.assertEquals(4, activeCellsInGarbagnateLargerThan1em5.size());
-        System.out.println(activeCellsInGarbagnateLargerThan1em5);
 
         TreeMap<Cell, Double> activeCellsInGarbagnateLargerThan1em8 = Services.filterByStrengthReverseOrder(inputCells, garbagnateMilanese, 1.E-8);
         Assert.assertEquals(6, activeCellsInGarbagnateLargerThan1em8.size());
-        System.out.println(activeCellsInGarbagnateLargerThan1em8);
 
     }
 
@@ -105,7 +102,6 @@ public class ServicesTest {
 
         TreeMap<Cell, Double> activeCellsInGarbagnate = Services.filterByStrengthReverseOrder(inputCells, garbagnateMilanese, 1.E-3);
         Assert.assertEquals(4, activeCellsInGarbagnate.size());
-        System.out.println(activeCellsInGarbagnate);
     }
 
     @Test

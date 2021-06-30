@@ -15,6 +15,15 @@ public class Services {
         return x -> x.getStrengthAtCoordinates(target) > threshold;
     }
 
+    /**
+     * Filters a list of cells according to their strength value in a specified target point in the space;
+     * then orders the valid cells according to their strength value.
+     *
+     * @param input is a List of Cells
+     * @param target is the Coordinates2D of a target point
+     * @param threshold is a threshold
+     * @return an ordered map, where keys are the Cells and values are their strength value in the target point.
+     */
     public static TreeMap<Cell, Double> filterByStrengthReverseOrder(List<Cell> input, Coordinates2D target, double threshold) {
         Map<Cell, Double> survivors = input.stream()        // filter those whose strength is larger than the threshold
                 .filter(strengthLargerThan(target, threshold))
@@ -26,6 +35,13 @@ public class Services {
         return result;
     }
 
+    /**
+     * Calculates the number of occurrences of single Cells in a List of CellEvents;
+     * then orders the Cells according to their occurrence.
+     *
+     * @param input is a List of CellEvents
+     * @return an ordered map, where keys are the Cells and values are their occurrences.
+     */
     public static LinkedHashMap<Cell, Integer> findMostCommonCells(List<CellEvent> input) {
         Map<Cell, Integer> occurrences = new HashMap<>();
         for(CellEvent ce: input) {                          // calculate occurrences of each Cell (no matter what's the status or timestamp)
@@ -39,8 +55,8 @@ public class Services {
         Collections.reverse(list);
 
         LinkedHashMap<Cell, Integer> result = new LinkedHashMap<>();
-        for (Map.Entry<Cell, Integer> cellOccurrency : list) {
-            result.put(cellOccurrency.getKey(), cellOccurrency.getValue());
+        for (Map.Entry<Cell, Integer> cellOccurrence : list) {
+            result.put(cellOccurrence.getKey(), cellOccurrence.getValue());
         }
         return result;
 
