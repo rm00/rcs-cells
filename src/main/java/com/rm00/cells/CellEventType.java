@@ -5,7 +5,7 @@ public enum CellEventType {
     Connected("Connected"),
     Disconnected("Disconnected");
 
-    private String label;
+    private final String label;
 
     CellEventType(String label) {
         this.label = label;

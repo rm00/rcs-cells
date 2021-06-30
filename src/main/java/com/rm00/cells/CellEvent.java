@@ -1,9 +1,6 @@
 package com.rm00.cells;
 
-import com.rm00.cells.strength.StrengthFactory;
-
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 public class CellEvent {
     private final Cell cell;
@@ -33,9 +30,4 @@ public class CellEvent {
                 '}';
     }
 
-    public static void main(String[] args) {
-        Cell a = new Cell("A", new Coordinates2D(45., 8.), StrengthFactory.getRadiusStrength(10.));
-        CellEvent ce1 = new CellEvent(a, CellEventType.Connected, Timestamp.valueOf(LocalDateTime.of(2010, 1, 30, 23, 55)));
-        System.out.println(ce1);
-    }
 }

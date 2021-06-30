@@ -5,7 +5,7 @@ public enum StrengthType {
     Radius("Radius"),
     Power("Power");
 
-    private String label;
+    private final String label;
 
     StrengthType(String label) {
         this.label = label;

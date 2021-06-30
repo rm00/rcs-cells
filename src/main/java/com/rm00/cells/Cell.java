@@ -6,9 +6,9 @@ import com.rm00.cells.strength.StrengthType;
 import java.util.Objects;
 
 public class Cell {
-    private String name;
-    private Coordinates2D coordinates2D;
-    private Strength strength;
+    private final String name;
+    private final Coordinates2D coordinates2D;
+    private final Strength strength;
 
     public Cell(String name, double latitude, double longitude, StrengthType strengthType, double strengthParam) {
         this.name = name;

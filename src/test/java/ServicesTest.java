@@ -5,7 +5,10 @@ import org.junit.Test;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.TreeMap;
 
 public class ServicesTest {
 
@@ -144,6 +147,11 @@ public class ServicesTest {
         }};
 
         LinkedHashMap<Cell, Integer> mostCommonCells = Services.findMostCommonCells(inputCellEvents);
-        System.err.println(mostCommonCells);
+        Assert.assertEquals(5, (int) mostCommonCells.get(milanoPowerCell));
+        Assert.assertEquals(9, (int) mostCommonCells.get(bergamoPowerCell));
+        Assert.assertTrue(mostCommonCells.containsKey(milanoRadiusCell));
+        Assert.assertTrue(mostCommonCells.containsKey(lodiPowerCell));
+        Assert.assertTrue(mostCommonCells.containsKey(aresePowerCell));
+        Assert.assertEquals(5, mostCommonCells.size());
     }
 }
